@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Metropolis-regular";
+  src: url("./fonts/metropolis-family/Metropolis-Regular.otf");
+}
+@font-face {
+  font-family: "Metropolis-bold";
+  src: url("./fonts/metropolis-family/Metropolis-Bold.otf");
+}
+@font-face {
+  font-family: "Metropolis-semi-bold";
+  src: url("./fonts/metropolis-family/Metropolis-SemiBold.otf");
+}
+@font-face {
+  font-family: "Metropolis-medium";
+  src: url("./fonts/metropolis-family/Metropolis-Medium.otf");
+}
+
+.MuiTypography-root{
+  font-family: "Metropolis-regular" !important;
+}
+
+body {
+  font-family: "Metropolis-regular" !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.MuiBadge-badge{
+  background-color: #cccccc;
+  top: 10px;
+}
+
+.MuiBadge-anchorOriginTopRightRectangle{
+  top: 10px !important;
+}

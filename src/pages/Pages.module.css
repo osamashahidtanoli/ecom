@@ -1,0 +1,128 @@
+.bannerImg{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../assets/1.jpg');
+    height: 70vh;
+}
+
+.content{
+    display: grid;
+    width: 100%;
+    height: 70vh;
+    grid-template-columns: 50% 50%;
+    align-content: center;
+}
+
+.firstHeader{
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: #dff1ff;
+    /* text-transform: uppercase; */
+}
+
+.content p{
+    font-size: 1.2rem;
+    color: #bbe1ff;
+    font-weight: 300;
+    margin: 2.2rem 0;
+}
+
+.content .actionBanner{
+    background-color: #9ab3d2;
+    border-color: #9ab3d2;
+    color: #002a49;
+    font-weight: 600;
+    padding: 10px 40px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+
+}
+
+.section1{
+    padding: 3rem 0;
+    background-image: url('../assets/section-1.png');
+    background-size: cover;
+    /* background-position: center center; */
+    background-repeat: no-repeat;
+    /* height: 800px; */
+}
+
+
+.productHeader{
+    color: #255981;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+h5{
+    color: #4779a0;
+    font-size: 1.2rem;
+}
+
+.products{
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 3rem;
+}
+
+.productBody{
+    position: relative;
+}
+
+.productImg{
+width: 100%;
+height: 300px;
+}
+
+.productImg img{
+    width: 100%;
+    height: 100%;
+}
+
+.productTitle{
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    color: #255981;
+}
+
+.productPrice{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #002a49;
+    display: flex;
+    justify-content: space-between;
+}
+
+.productPrice div{
+    align-self:flex-end;
+}
+
+.productPrice .rating{
+    font-size: 1.2rem;
+}
+
+.productPrice .rating1{
+    font-size: 1rem;
+}
+
+ .productAction{
+    position:absolute;
+    top: 251px;
+    left: 0;
+    display:flex;
+    justify-content:space-between;
+    width:100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    transition: 0.5ms ease-in-out display;
+}
+
+.productBody:hover .productAction{
+    display:flex;
+}
+
+.productAction button{
+    color: #fff;
+}

@@ -1,0 +1,104 @@
+.firstHeader{
+    padding: 10px;
+    border: 1px solid #eee;
+    background-color: #3d5a80;
+}
+
+.flex1{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.text{
+    font-weight: 600;
+    font-size: 14px;
+    color: #d2e2f8;
+}
+
+.text, .currency{
+    align-self: center;
+}
+
+.iconColor{
+    color: #d2e2f8;
+}
+
+.color{
+    color: #d2e2f8 !important;
+}
+
+/* 2nd Header */
+
+.header2{
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+
+
+.header2 .logo, .header2 .navBtns{
+    width: 30%;
+}
+
+.header2 .searchField{
+    width: 40%;
+}
+
+.logo{
+    color: #3d5a80;
+    font-size: 1.6rem;
+    font-weight: bold;
+    align-self: center;
+}
+
+.logo span{
+    color: #4e5764
+}
+
+.navBtns{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navBtns Button{
+    color: #3d5a80;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+
+.fontSize{
+    width: 2rem !important;
+    height: 2rem !important;
+}
+
+.searchField{
+    align-self: center;
+}
+
+.txtField input{
+    padding: 12px 14px !important;
+}
+
+/* Navbar */
+
+.header3{
+    padding: 10px 0px;
+    background-color: #f6fbff;
+    
+}
+
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    
+     
+}
+
+.navBar li{
+    list-style: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #666b72;
+}
