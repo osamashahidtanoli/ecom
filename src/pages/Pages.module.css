@@ -126,3 +126,31 @@ height: 300px;
 .productAction button{
     color: #fff;
 }
+
+.mainImg{
+    width: 100%;
+    /* height: 100%; */
+    border-radius: 20px;
+}
+
+.mainImg img{
+    width: 100%;
+    height:350px;
+    border-radius: 20px;
+}
+
+.imagesGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px
+}
+
+.imagesGrid img{
+    width: 100%;
+    border-radius: 10px;
+    height: 100px
+}
+
+.margin20{
+    margin-top:20px;
+}

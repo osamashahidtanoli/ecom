@@ -5,6 +5,7 @@ export const fetchProductData = () => {
   
   return async (dispatch) => {
     const fetchProducts = async () => {
+      dispatch(productAction.loading())
        
       const response = await fetch(
         "https://course-api.com/react-store-products"
@@ -19,11 +20,41 @@ export const fetchProductData = () => {
 
     try {
       const productData = await fetchProducts();
-      const featureProducts = productData.filter(p => p.featured === true ? p.featured : false);
-      console.log(featureProducts);
+      // const featureProducts = productData.filter(p => p.featured === true ? p.featured : false);
+      // console.log(featureProducts);
       dispatch(productAction.replaceProducts(productData));
+      dispatch(productAction.notLoading())
     } catch (err) {
       console.log(err);
     }
   };
 };
+
+
+export const fetchSingleProduct = (id) => {
+  return async (dispatch) => {
+    const fetchSingle = async () => {
+      dispatch(productAction.loading())
+
+      const response = await fetch(`https://course-api.com/react-store-single-product?id=${id}`);
+
+      if(!response.ok){
+        console.log('ERROR: Could not fetch')
+      }
+
+      const data = await response.json();
+
+      return data;
+    }
+    try{
+        const singleData = await fetchSingle();
+        dispatch(productAction.fetchSingleProduct(singleData));
+        dispatch(productAction.notLoading())
+        
+    }
+    catch(err){
+        console.log(err);
+    }
+  }
+}
+
