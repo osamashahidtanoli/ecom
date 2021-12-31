@@ -20,9 +20,10 @@ export const fetchProductData = () => {
 
     try {
       const productData = await fetchProducts();
-      // const featureProducts = productData.filter(p => p.featured === true ? p.featured : false);
+      const featureProducts = productData.filter(p => p.featured === true);
       // console.log(featureProducts);
       dispatch(productAction.replaceProducts(productData));
+      dispatch(productAction.addFeatureProducts(featureProducts));
       dispatch(productAction.notLoading())
     } catch (err) {
       console.log(err);

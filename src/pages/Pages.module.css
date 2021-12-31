@@ -152,5 +152,34 @@ height: 300px;
 }
 
 .margin20{
-    margin-top:20px;
+    margin-top:20px !important;
 }
+
+
+.proflex{
+    display:flex
+}
+
+.proflex2{
+    display:flex;
+    justify-content:space-between;
+}
+
+.proflex div{
+    margin-right: 10px;
+    align-self: center;
+}
+
+.headS{
+    font-size: 1.2rem;
+    font-weight:normal;
+    margin-bottom: 10px;
+}
+
+.valueS{
+    font-size: 1.2rem;
+    font-weight:bold
+}
+
+
+

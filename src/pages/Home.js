@@ -1,6 +1,6 @@
 import classes from './Pages.module.css';
 import { Button, Container } from '@material-ui/core';
-import {Products} from '../components';
+import {Feature} from '../components';
 
 const Home = () => {
     return (
@@ -19,7 +19,7 @@ const Home = () => {
             </div>
             <div className={classes.section1}>
                 <Container>
-                    <Products/>
+                    <Feature/>
                 </Container>
             </div>
         </>

@@ -3,6 +3,7 @@ import Products from './Products';
 import ProductItems from "./ProductItems";
 import Loading from "./Loading";
 import ProductImages from './ProductImages';
+import Feature from './Feature';
 
 
 
@@ -11,5 +12,6 @@ export {
     Products,
     ProductItems,
     Loading,
-    ProductImages
+    ProductImages,
+    Feature,
 }

@@ -5,6 +5,7 @@ import {useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import {Loading, ProductImages} from '../components';
 import classes from './Pages.module.css';
+import {Rating} from '@material-ui/lab';
 
 
 const SingleProduct = () => {
@@ -22,7 +23,7 @@ const SingleProduct = () => {
         return <Loading/>   
     }
 
-    const {name, images} = single;
+    const {name, images, description,colors, category,stars,reviews,price,stock} = single;
 
     
 
@@ -35,6 +36,29 @@ const SingleProduct = () => {
                     </Grid>
                     <Grid item xs={6}>
                         <h1>{name}</h1>
+                        <div className={classes.proflex}>
+                        <div><Rating className={classes.rating} name="read-only" value={stars} readOnly /></div>   <p>{reviews} people reviewed this product</p>
+                        </div>
+
+                        <div className={classes.proflex2}>
+                            <div>
+                                <div className={classes.headS}>Price</div>
+                                <div className={classes.valueS}>$ {price}</div>
+                            </div>
+                            <div>
+                                <div className={classes.headS}>Stock</div>
+                                <div className={classes.valueS}>{stock}</div>
+                            </div>
+                        </div>
+                      
+                        <p>{description}</p>
+                        {colors.map(color => <div><input  type='radio' name='color' value={color} /> <label>{color}</label></div>) }
+                        <div>
+                            <div>
+                                Category:
+                            </div>
+                            <div>{category}</div>
+                        </div>
                     </Grid>
                 </Grid>
         </Container>

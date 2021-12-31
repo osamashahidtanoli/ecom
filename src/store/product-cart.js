@@ -4,6 +4,7 @@ const productSlice = createSlice({
     name: 'product',
     initialState: {
         products: [],
+        featureProducts: [],
         loadingProduct: false,
         single: {}
     },
@@ -21,6 +22,10 @@ const productSlice = createSlice({
             },
             notLoading(state){
                 state.loadingProduct = false;
+            },
+            addFeatureProducts(state, action){
+                const featurePro = action.payload;
+                state.featureProducts = featurePro;
             }
     }
 })
