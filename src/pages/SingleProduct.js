@@ -1,4 +1,4 @@
-import {Container, Grid} from '@material-ui/core';
+import {Button, Container, Grid} from '@material-ui/core';
 import {fetchSingleProduct} from '../store/product-actions';
 import {useDispatch, useSelector} from 'react-redux';
 import {useEffect} from 'react';
@@ -52,12 +52,17 @@ const SingleProduct = () => {
                         </div>
                       
                         <p>{description}</p>
-                        {colors.map(color => <div><input  type='radio' name='color' value={color} /> <label>{color}</label></div>) }
+                        {colors && colors.map(color => <div key={color}><input    type='radio' name='color' value={color} /> <label>{color}</label></div>) }
+                        {!colors && <p>No Colors</p> }
                         <div>
                             <div>
                                 Category:
                             </div>
                             <div>{category}</div>
+                        </div>
+                        <div>
+                            <input type="number"  min={1} max={stock} />
+                            <Button type="button" variant='contained'>Add To Cart</Button>
                         </div>
                     </Grid>
                 </Grid>

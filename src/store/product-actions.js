@@ -21,6 +21,9 @@ export const fetchProductData = () => {
     try {
       const productData = await fetchProducts();
       const featureProducts = productData.filter(p => p.featured === true);
+      const categories = productData.map(sp => sp.category);
+      const cat = [...new Set(categories)];
+    
       // console.log(featureProducts);
       dispatch(productAction.replaceProducts(productData));
       dispatch(productAction.addFeatureProducts(featureProducts));

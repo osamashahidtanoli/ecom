@@ -8,13 +8,13 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import {Link} from 'react-router-dom';
 const Feature = () => {
     const featureProducts = useSelector(state => state.product.featureProducts);
-    console.log(featureProducts);
+    // console.log(featureProducts);
     let content;
 
     if(featureProducts && featureProducts.length > 0){
         content = featureProducts.slice(0,4).map((fp) => {
             return (
-                <div className={classes.productBody}>
+                <div key={fp.id} className={classes.productBody}>
                 <div className={classes.productImg}>
                     <img src={fp.image} alt='img'/>
                 </div>
