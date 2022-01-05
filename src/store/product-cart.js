@@ -6,7 +6,8 @@ const productSlice = createSlice({
         products: [],
         featureProducts: [],
         loadingProduct: false,
-        single: {}
+        single: {},
+        filterPro: null
     },
     reducers: {
             replaceProducts(state,action){
@@ -26,6 +27,11 @@ const productSlice = createSlice({
             addFeatureProducts(state, action){
                 const featurePro = action.payload;
                 state.featureProducts = featurePro;
+            },
+            filterProducts(state, action){
+                const catPro = action.payload.cat;
+                state.filterPro = state.products.filter(product => product.category === catPro)
+
             }
     }
 })

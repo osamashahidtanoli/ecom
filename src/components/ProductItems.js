@@ -10,6 +10,13 @@ import {Link} from 'react-router-dom';
 
 const ProductItems = ({product}) => {
     const {name , price, id, image} = product;
+    const formatPrice = (number) => {
+        const newNumber = Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        }).format(number / 100)
+        return newNumber;
+    }
    
     // const [value, setValue] = useState(4);
     return (
@@ -23,7 +30,7 @@ const ProductItems = ({product}) => {
                        {name}
                     </div>
                     <div className={classes.productPrice}>
-                       <div> {price}</div>
+                       <div> {formatPrice(price)}</div>
                        <div>
                        <Rating className={classes.rating} name="read-only" value={4} readOnly /> 
                       

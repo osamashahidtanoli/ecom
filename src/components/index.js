@@ -4,6 +4,8 @@ import ProductItems from "./ProductItems";
 import Loading from "./Loading";
 import ProductImages from './ProductImages';
 import Feature from './Feature';
+import AddToCart from './AddToCart';
+import FilterProducts from './FilterProducts';
 
 
 
@@ -14,4 +16,6 @@ export {
     Loading,
     ProductImages,
     Feature,
+    AddToCart,
+    FilterProducts,
 }

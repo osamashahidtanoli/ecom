@@ -21,8 +21,7 @@ export const fetchProductData = () => {
     try {
       const productData = await fetchProducts();
       const featureProducts = productData.filter(p => p.featured === true);
-      const categories = productData.map(sp => sp.category);
-      const cat = [...new Set(categories)];
+      
     
       // console.log(featureProducts);
       dispatch(productAction.replaceProducts(productData));
@@ -30,6 +29,7 @@ export const fetchProductData = () => {
       dispatch(productAction.notLoading())
     } catch (err) {
       console.log(err);
+      dispatch(productAction.notLoading())
     }
   };
 };
@@ -57,6 +57,7 @@ export const fetchSingleProduct = (id) => {
         
     }
     catch(err){
+      dispatch(productAction.notLoading());
         console.log(err);
     }
   }

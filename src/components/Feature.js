@@ -10,6 +10,13 @@ const Feature = () => {
     const featureProducts = useSelector(state => state.product.featureProducts);
     // console.log(featureProducts);
     let content;
+    const formatPrice = (number) => {
+        const newNumber = Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        }).format(number / 100)
+        return newNumber;
+    }
 
     if(featureProducts && featureProducts.length > 0){
         content = featureProducts.slice(0,4).map((fp) => {
@@ -23,7 +30,7 @@ const Feature = () => {
                        {fp.name}
                     </div>
                     <div className={classes.productPrice}>
-                       <div> {fp.price}</div>
+                       <div> {formatPrice(fp.price)}</div>
                        <div>
                        <Rating className={classes.rating} name="read-only" value={4} readOnly /> 
                       

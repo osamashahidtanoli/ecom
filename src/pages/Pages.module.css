@@ -69,6 +69,11 @@ h5{
 
 .productBody{
     position: relative;
+    box-shadow: 0px 4px 5px #eee;
+}
+
+.productContent{
+    padding: 5px 10px;
 }
 
 .productImg{
@@ -85,6 +90,8 @@ height: 300px;
     margin: 1rem 0;
     font-size: 1.2rem;
     color: #255981;
+    text-transform: capitalize;
+    font-weight: bold;
 }
 
 .productPrice{
@@ -93,6 +100,8 @@ height: 300px;
     color: #002a49;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1rem;
+
 }
 
 .productPrice div{
@@ -180,6 +189,64 @@ height: 300px;
     font-size: 1.2rem;
     font-weight:bold
 }
+
+.colorButton{
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   border-color: transparent;
+   margin-right: 10px;
+}
+
+.qtyFlex{
+    display: flex;
+    margin: 1rem 0;
+}
+
+.qtyFlex button{
+    background-color: #3d5a80;
+    padding: 10px 22px;
+    border-color: transparent;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.qtyFlex p{
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 10px;
+    align-self: center;
+}
+
+.desc{
+    font-size: 0.9rem;
+    line-height: 125%;
+    color: #5e718a;
+}
+
+.proHeading{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #002a49;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.filterDiv{
+    background-color: #fff;
+    box-shadow: 0px 2px 5px #eee;
+    border: 1px solid #4779a0;
+    padding: 18px 20px;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+.catGrid{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 
 
 
