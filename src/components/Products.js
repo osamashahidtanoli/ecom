@@ -1,5 +1,5 @@
 import classes from '../pages/Pages.module.css';
-import { ProductItems } from './';
+import { ProductItems, Loading } from './';
 import { useSelector } from 'react-redux';
 import {useState, useEffect} from 'react';
 import {fetchProductData} from '../store/product-actions';
@@ -9,8 +9,9 @@ import { useDispatch } from 'react-redux';
 const Products = () => {
     const products = useSelector(state => state.product.products);
     const filterProducts = useSelector(state => state.product.filterPro);
+    const loading = useSelector(state => state.product.loadingProduct);
     const dispatch = useDispatch();
-    let sortedProducts = [...products];
+    let sortedProducts = [];
     const [sortP, setSortP ] = useState('lowest');
     const sortProducts = (event) =>{
         setSortP(event.target.value);
@@ -18,16 +19,15 @@ const Products = () => {
     }
 
     if(filterProducts && filterProducts.length > 0){
-        sortedProducts = [...filterProducts];
+       sortedProducts = [...filterProducts];
     }
-    else{
-        sortedProducts = [...products]
-    }
+    
+    
 
-    useEffect(()=> {
+    // useEffect(()=> {
    
-        dispatch(fetchProductData());
-      }, [dispatch, sortP])
+    //     dispatch(fetchProductData());
+    //   }, [dispatch, filterProducts])
 
 
     if(products && sortP === 'lowest'){
@@ -55,9 +55,11 @@ const Products = () => {
                 <option value="z-a">z - a </option>
             </select>
             <div className={classes.products}>
-            {products.length > 0 && sortedProducts.map((product) => (
+            {loading && <Loading/>}
+            {!loading && sortedProducts.length > 0 && sortedProducts.map((product) => (
                 <ProductItems key={product.id} product={product}/>
             ))}
+            {!loading && sortedProducts.length === 0 && <h1>No Products found</h1>}
             </div>
         </>
     )

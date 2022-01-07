@@ -13,6 +13,7 @@ const productSlice = createSlice({
             replaceProducts(state,action){
                 const pro = action.payload;
                 state.products = pro;
+                state.filterPro = state.products
             },
             fetchSingleProduct(state, action){
                const single = action.payload;
@@ -29,8 +30,21 @@ const productSlice = createSlice({
                 state.featureProducts = featurePro;
             },
             filterProducts(state, action){
-                const catPro = action.payload.cat;
-                state.filterPro = state.products.filter(product => product.category === catPro)
+                const filterItems = action.payload;
+                const {name , cat} = filterItems;
+                let temp_products = [...state.products]
+                if(name){
+                    const nameLowerCase = name.toLowerCase();
+                    temp_products = temp_products.filter(product => product.name.toLowerCase().startsWith(nameLowerCase));
+                }
+                if(cat !== 'all'){
+                    temp_products = temp_products.filter(product => product.category === cat)
+                }
+                if(name === '' && cat === ''){
+                    temp_products =  [...state.products]
+                }
+                
+                state.filterPro = temp_products
 
             }
     }
