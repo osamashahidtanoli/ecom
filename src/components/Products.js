@@ -1,16 +1,16 @@
 import classes from '../pages/Pages.module.css';
 import { ProductItems, Loading } from './';
 import { useSelector } from 'react-redux';
-import {useState, useEffect} from 'react';
-import {fetchProductData} from '../store/product-actions';
-import { useDispatch } from 'react-redux';
+import {useState} from 'react';
+// import {fetchProductData} from '../store/product-actions';
+// import { useDispatch } from 'react-redux';
 
 
 const Products = () => {
     const products = useSelector(state => state.product.products);
     const filterProducts = useSelector(state => state.product.filterPro);
     const loading = useSelector(state => state.product.loadingProduct);
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     let sortedProducts = [];
     const [sortP, setSortP ] = useState('lowest');
     const sortProducts = (event) =>{

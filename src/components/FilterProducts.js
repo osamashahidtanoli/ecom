@@ -26,7 +26,7 @@ const FilterProducts = () => {
     }
 
     const categories = uniqueValueHandler(products, 'category');
-    const colors = uniqueValueHandler(products, 'colors');
+    // const colors = uniqueValueHandler(products, 'colors');
 
     const onChange = (e) => {
         setFilterData((prevState) => ({

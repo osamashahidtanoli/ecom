@@ -4,8 +4,10 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import PersonIcon from '@material-ui/icons/Person';
 import SearchIcon from '@material-ui/icons/Search';
+import { useNavigate } from 'react-router-dom';
 
 const MidHeader = () => {
+    const navigate = useNavigate();
     return (
         <header className={classes.header2}>
             <Container>
@@ -23,7 +25,7 @@ const MidHeader = () => {
                     </div>
                     <div className={classes.navBtns}>
                         <div>
-                            <IconButton >
+                            <IconButton onClick={() => navigate('/cart')} >
                                 <ShoppingCartIcon className={classes.fontSize} />
                             </IconButton>
                             <IconButton>

@@ -1,8 +1,8 @@
 import classes from './Pages.module.css';
 import { Button, Container } from '@material-ui/core';
-import {Feature} from '../components';
+import {Feature, } from '../components';
 
-const Home = () => {
+const Home = ({loading}) => {
     return (
         <>
             <div className={classes.bannerImg}>
@@ -19,7 +19,8 @@ const Home = () => {
             </div>
             <div className={classes.section1}>
                 <Container>
-                    <Feature/>
+                    {loading ? <h1>Loading...</h1> : <Feature />}
+                    
                 </Container>
             </div>
         </>
